@@ -101,17 +101,29 @@ function turn(e) {
   }
 const w = win();
 if(w ==  1) {
+    cells.forEach(x => {
+        x.removeEventListener('click', turn);
+        x.style.cursor = "default" 
+    })
     setTimeout(() => {
     alert("player 1 wins");
     startGame();
     },1000);
 }
 else if( w == 2) {
+            cells.forEach((x) => {
+                x.removeEventListener("click", turn);
+                x.style.cursor = "default";
+            });
     setTimeout(() => {
         alert("player 2 wins");
         startGame();
     }, 1000);
 } else if( w == 0) {
+          cells.forEach((x) => {
+              x.removeEventListener("click", turn);
+              x.style.cursor = "default";
+          });
  setTimeout(() => {
      alert("game tie");
      startGame();
